@@ -144,7 +144,8 @@ a:hover:after {
 /* QUEM SOMOS */
 .container-2 {
     width: 100%;
-    height: 800px;
+    height: 700px;
+   
 }
 
 
@@ -170,10 +171,7 @@ a:hover:after {
 
 .quemsomos {
 
-
-
-
-    background-color: #b09a82;
+    background-color: #fffefd;
 }
 
 .texto2 h1 {
@@ -205,7 +203,6 @@ a:hover:after {
     height: 135vh;
     width: 100%;
     background-size: cover;
-    /* margin-top: 15vh; */
     margin: center;
 
 
@@ -213,13 +210,79 @@ a:hover:after {
 
 .texto3 h1 {
     width: 100%;
-    margin-left: 350px;
+    margin-left: 520px;
     font-size: 60px;
-    height: 13vh;
+    
     color: white;
 }
 
+.ser {
+font-size: 25px;
+color: #ffffff;
+text-align: center;
 
+
+}
+
+
+/* GALERIA */
+
+.container-4 {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(244, 248, 248);
+    
+}
+
+.texto-4 h1 {
+    width: 100%;
+    margin-left: 350px;
+    font-size: 60px;
+    height: 13vh;
+    color: rgb(238, 25, 25);
+}
+
+.img-4 img{
+
+height: 45vh;
+width: 25vw;
+border-radius: 5%;
+
+
+}
+.flex {
+
+    display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+height: 100vh;
+}
+
+
+/* CONTAINER 5 CONTATO  */
+
+.container-5 {
+    width: 100%;
+    height: 800px;
+    background-color: #ff3c78;
+}
+
+.Contato {
+
+    background-image: url();
+    height: 135vh;
+    width: 100%;
+    background-size: cover;
+    /* margin-top: 15vh; */
+    margin: center;
+}
+.texto-5 h1 {
+    width: 100%;
+    margin-left: 350px;
+    font-size: 60px;
+    height: 13vh;
+    color: rgb(238, 25, 25);
+}
 
 
 
