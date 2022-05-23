@@ -8,41 +8,44 @@
     <title>Barbearia Xapel</title>
     <!-- Link chamando o css  -->
     <link rel="stylesheet" href="xapel.css">
+    <script src="index.js"></script>
     <!-- <link rel="shortcut icon" href="" type="image/x-icon"> -->
 </head>
 
 <body>
     <!-- Conteudo da nav -->
-    <div class="header-1">
-        <nav class="nav-inicio">
-            <img src="logob.png">
-            <div class="itens">
-                <a href="#">Inicio</a>
-                <a href="#">Quem Somos</a>
-                <a href="#">Serviços</a>
-                <a href="#">Galeria</a>
-                <a href="#">Contato</a>
-                <a style="pointer-events: none">|</a>
-                <a href="#">Login</a>
-                <a href="#">Cadastro</a>
+    <section id="inicio">
+        <header id="header1" class="header_1">
+            <nav class="nav_inicio">
+                <img class="logo" src="logob.png">
+                <div class="itens">
+                    <a href="#">Inicio</a>
+                    <a href="#quemsomos">Quem Somos</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#galeria">Galeria</a>
+                    <a href="#contato">Contato</a>
+                    <a style="pointer-events: none">|</a>
+                    <a href="login.html">Login</a>
+                    <a href="Cadastro.html">Cadastro</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Textos e conteudo da Home -->
+        <div class="fundo-home">
+            <div class="cont">
+                <br><br><br><br>
+                <h1 id="texto_home"> B A R B E A R I A </h1> <br>
+                <h2>XAPEL</h2>
+                <button onclick="Agendamento()">AGENDE AGORA!</button>
+                <p>Venha sentir essa experiência</p>
+
             </div>
-        </nav>
-    </div>
-
-    <!-- Textos e conteudo da Home -->
-    <div class="fundo-home">
-        <div class="cont">
-
-            <h1> B A R B E A R I A </h1> <br>
-            <h2>XAPEL</h2>
-            <button onclick="Agendamento()">AGENDE AGORA!</button>
-            <p>Venha sentir essa experiência</p>
-
         </div>
-    </div>
+    </section>
 
     <!-- Segunda pagina do Site  QUEM SOMOS -->
-    <div class="container-2">
+    <div class="container-2" id="quemsomos">
         <div class="quemsomos">
             <div class="foto">
                 <div class="texto2">
@@ -68,7 +71,7 @@
 
     <!-- 3 tela CONTAINER - 2 SERVIÇOS   -->
 
-    <div class="container-3">
+    <div class="container-3" id="servicos">
         <div class="seviços">
             <div class="foto-2">
                 <div class="texto3">
@@ -102,8 +105,6 @@
                         <br> R$:150,00
                         <hr>
 
-
-
                     </div>
                 </div>
             </div>
@@ -112,26 +113,32 @@
 
     <!-- GALERIA CONTEINER 4 -->
 
-    <div class="container-4">
+    <div class="container-4" id="galeria">
         <div class="galeria ">
             <div class="texto-4">
                 <div class="flex">
 
-                <h1>GALERIA</h1>
+                    <h1>GALERIA</h1>
 
-                <div class="img-4">
-                    <img src="foto1.jpeg">
+                    <div class="img-4">
+                        <img src="foto1.jpeg">
+                    </div>
+                    <div class="img-4">
+                        <img src="foto2.jpg">
+                    </div>
+                    <div class="img-4">
+                        <img src="foto3.jpg">
+                    </div>
+                    <div class="img-4">
+                        <img src="foto4.jpg">
+                    </div>
+                    <div class="img-4">
+                        <img src="foto5.jpg">
+                    </div>
+                    <div class="img-4">
+                        <img src="foto6.jpg">
+                    </div>
                 </div>
-                <div class="img-4">
-                    <img src="foto2.jpg">
-                </div>
-                <div class="img-4"> 
-                    <img src="foto3.jpg" >
-                </div>
-                <div class="img-4"> 
-                    <img src="foto4.jpg" >
-                </div>
-            </div>
             </div>
         </div>
     </div>
@@ -142,7 +149,7 @@
 
     <!-- CONTATO CONTAINER 5 -->
 
-    <div class="container-5">
+    <div class="container-5" id="contato">
         <div class="contato ">
             <div class="texto-5">
 
