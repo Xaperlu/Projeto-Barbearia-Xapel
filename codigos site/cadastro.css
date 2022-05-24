@@ -77,6 +77,12 @@ a:hover:after {
     vertical-align: auto;
 }
 
+.combo{
+
+border-radius: 8px;
+
+}
+
 .container {
     position: absolute;
     width: 35vw;
@@ -107,7 +113,7 @@ a:hover:after {
 
 .texto input {
     border-radius: 10vw;
-    border: 5px solid gray;
+    /* border: 5px solid gray; */
 }
 
 .container h1 {

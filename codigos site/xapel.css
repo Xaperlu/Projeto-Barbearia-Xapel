@@ -213,7 +213,7 @@ a:hover:after {
 
 .foto-2 {
 
-    background-image: url('serviço.serv.jpg');
+    background-image: url(serviçoideal.jfif);
     height: 135vh;
     width: 100%;
     background-size: cover;
@@ -224,17 +224,19 @@ a:hover:after {
 
 .texto3 h1 {
     width: 100vh;
-    margin-left: 520px;
+    margin-left: 540px;
     font-size: 60px;
-    
     color: white;
+    
 }
 
 .ser {
 font-size: 25px;
 color: #ffffff;
 text-align: center;
-
+flex-direction: column;
+font-size: 5vh;
+margin-left: 4%;
 
 }
 
@@ -250,7 +252,7 @@ text-align: center;
 
 .texto-4 h1 {
     width: 180vw; 
-    margin-left: 520px;
+    margin-left: 540px;
     font-size: 60px;
     height: 13vh;
     color:rgb(83, 80, 80);
@@ -259,12 +261,12 @@ text-align: center;
 .img-4 img{
 display: flex;
 border-radius: 5%;
-margin-left: 100px;
+margin-left: 120px;
 width: 280px;
 height: 280px;
 border-bottom: 200px;
 border: solid rgb(255, 255, 255) 5px;
-
+flex-direction: column;
 
 
 }
@@ -287,10 +289,11 @@ height: 100vh;
 
 .texto-5 h1 {
     width: 100vh;
-    margin-left: 580px;
+    margin-left: 570px;
     font-size: 40px;
     height: 13vh;
     color: white;
+    
 }
 
 
