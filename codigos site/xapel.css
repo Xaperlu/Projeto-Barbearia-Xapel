@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 * {
     scroll-behavior: smooth;
@@ -94,6 +95,17 @@ a:hover:after {
 
 }
 
+
+.fundo-texto {
+background: rgba(247, 246, 245, 0.253);
+height: 200px;
+width: 500px;
+margin-left: 27rem;
+padding-left: 20px;
+padding-top: 20px;
+border-radius: 30px;
+
+}
 .cont h1 {
     font-size: 50px;
     margin: 0;
@@ -102,6 +114,7 @@ a:hover:after {
     margin-left: auto;
     margin-right: auto;
     color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
 
 
 
@@ -113,8 +126,10 @@ a:hover:after {
     align-items: center;
     width: 200px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 10vw;
     color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+
 
 }
 
@@ -133,7 +148,8 @@ a:hover:after {
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-    margin-top: 15vh;
+    margin-top: 20vh;
+    
 
 }
 
@@ -149,7 +165,7 @@ a:hover:after {
 .cont p {
     font-size: 50px;
     text-align: center;
-    margin-top: 47vh;
+    margin-top: 35vh;
     color: #000000;
 
 
@@ -296,9 +312,31 @@ height: 100vh;
     
 }
 
+.text {
+color: white;
+font-size: 20px;
+}
+
+.texto-5 .telefone {
+    color: white;
+    font-size: 20px;
+    margin-left: 37rem;
+    margin-top: -3.5rem;
+    position: absolute;
+    }
 
 
-/* width: 80vw; lado
-height: 40vh; altura */
+    .texto-5   .end {
+        color: white;
+    font-size: 20px;
+    margin-left: 70rem;
+    margin-top: -3.5rem;
+    position: absolute;
+        }
 
-/* #382f2f */
+
+
+/* width:vw; lado
+height: vh; altura */
+
+/* #382f2f a cor que estou usando  */
