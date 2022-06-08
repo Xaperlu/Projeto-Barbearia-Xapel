@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Xapel | Cadastro</title>
+    <script src="./js/funcoes.js"></script>
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="shortcut icon" href="lol.png" type="image/x-icon">
+    <script src="js/funcoes.js"></script>
+</head>
+
+<body>
+
+    <div class="header-1">
+        <nav class="nav-inicio">
+            <img src="assets/imgs/logob.png">
+            <div class="itens">
+                <a href="index.html#">Inicio</a>
+                <a href="index.html#quemsomos">Quem Somos</a>
+                <a href="index.html#servicos">Serviços</a>
+                <a href="index.html#galeria">Galeria</a>
+                <a href="index.html#contato">Contato</a>
+                <a style="pointer-events: none">|</a>
+                <a href="login.html#login">Login</a>
+                <a href="Cadastro.html#cadastro">Cadastro</a>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="fundo-cadastro">
+        <div class="container">
+
+
+            <h1>CADASTRO</h1>
+            <div class="texto">
+
+                <p>Nome: </p><input id="ipt_nome" type="text"><br>
+                <p>E-Mail: </p><input id="ipt_email" type="text"><br>
+                <p>Telefone: </p><input id="ipt_telefone" type="text"><br>
+                <p>CPF:</p><input id="ipt_cpf" type="text"><br>
+                <p>Senha: </p><input id="ipt_senha" type="password"><br>
+                <p>Confirmar Senha: </p><input id="confirmar_senha" type="password"><br> <br>
+
+                <button onclick="cadastrar()">Cadastrar</button><br>
+                <div id="cardErro" style="display: none;">
+                    <div id="mensagem_erro"></div>
+                </div>
+
+                <div id="div_aguardar"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+    
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+       
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = ipt_nome.value;
+        var emailVar = ipt_email.value;
+        var telefoneVar = ipt_telefone.value;
+        var cpfVar = ipt_cpf.value;
+        var senhaVar = ipt_senha.value;
+        var confirmacaoSenhaVar = confirmar_senha.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }if (emailVar.indexOf('@') == -1 ) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro, falta o @  no campo E-MAIL)";
+           
+            finalizarAguardar();
+            return false;
+            
+        }else {
+            setInterval(sumirMensagem, 5000) 
+
+        }if ( senhaVar != confirmacaoSenhaVar ) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro, as senhas não são compartiveis)";
+
+             finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                telefoneServer: telefoneVar,
+                cpfServer: cpfVar,
+                senhaServer: senhaVar
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.header_1 {
+    background-color: rgba(56, 47x, 47, 0.527);
+    height: 50px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    align-items: center;
+    transition: all 300ms;
+    padding-left: 10rem;
+}
+
+.header_1 .logo {
+    margin-left: -8rem;
+    margin-bottom: 2.5rem;
+}
+.nav_inicio a {
+    display: inline-block;
+    color: white;
+    margin-left: 60px;
+}
+
+.nav_inicio a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.itens {
+    margin-top: -210px;
+
+    padding-top: 28px;
+}
+
+.nav_inicio img {
+    width: 22%;
+    margin-right: 20rem;
+    margin-top: -90px;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+a:after {
+    content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.8s;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+/* CONTEUDO HOME */
+
+.fundo-home {
+    background-image: url(../assets/imgs/barber.gif);
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 9vh;
+
+}
+
+
+.fundo-texto {
+background: rgba(247, 246, 245, 0.253);
+height: 200px;
+width: 500px;
+margin-left: 27rem;
+padding-left: 20px;
+padding-top: 20px;
+border-radius: 30px;
+
+}
+.cont h1 {
+    font-size: 50px;
+    margin: 0;
+    align-items: center;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+
+
+
+}
+
+.fundo-home h2 {
+    font-size: 50px;
+    margin: 0;
+    align-items: center;
+    width: 200px;
+    margin-left: auto;
+    margin-right: 10vw;
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+.cont button {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #000000;
+    color: white;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20vh;
+    
+
+}
+
+.cont button:hover {
+    background-color: white;
+    color: #000000;
+
+
+
+
+}
+
+.cont p {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 35vh;
+    color: #000000;
+
+
+}
+
+/* QUEM SOMOS */
+.container-2 {
+    width: 100%;
+    height: 700px;
+   
+}
+
+
+.foto img {
+
+    width: 40vw;
+    height: 110vh;
+    margin-top: 15vh;
+    margin-left: 13vw;
+
+}
+
+.foto {
+
+    background-image: url('../assets/imgs/pexels.jpg');
+    height: 115vh;
+    width: 40vw;
+    background-size: cover;
+    margin-top: 15vh;
+    margin-left: 25vh;
+
+}
+
+.quemsomos {
+
+    background-color: #fffefd;
+}
+
+.texto2 h1 {
+    width: 100%;
+    margin-left: 330px;
+    font-size: 64px;
+    height: 13vh;
+
+}
+
+.texto2 p {
+    margin-left: 600px;
+    width: 85%;
+    font-size: 30px;
+
+
+}
+
+.editar {
+    margin-left: 600px;
+    width: 85%;
+    font-size: 30px
+
+
+
+}
+.texto2 button{
+    margin-left: 700px;
+    margin-top: 40%;
+    font-size: 30px;
+    background-color: gray;
+    color: white;
+    width: 30vw;
+    height: 15vh;
+
+
+
+}
+
+/* SERVIÇOS  */
+
+.container-3 {
+    width: 100%;
+    height: 900px;
+}
+
+.foto-2 {
+
+    background-image: url(../assets/imgs/serviçoideal.jfif);
+    height: 135vh;
+    width: 100%;
+    background-size: cover;
+    margin: center;
+
+
+}
+
+.texto3 h1 {
+    width: 100vh;
+    margin-left: 540px;
+    font-size: 60px;
+    color: white;
+    
+}
+
+.ser {
+font-size: 25px;
+color: #ffffff;
+text-align: center;
+flex-direction: column;
+font-size: 5vh;
+margin-left: 4%;
+
+}
+
+
+/* GALERIA */
+
+.container-4 {
+    width: 100%;
+    height: 800px;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+.texto-4 h1 {
+    width: 180vw; 
+    margin-left: 540px;
+    font-size: 60px;
+    height: 13vh;
+    color:rgb(83, 80, 80);
+}
+
+.img-4 img{
+display: flex;
+border-radius: 5%;
+margin-left: 120px;
+width: 280px;
+height: 280px;
+border-bottom: 200px;
+border: solid rgb(255, 255, 255) 5px;
+flex-direction: column;
+
+
+}
+.flex {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+height: 100vh;
+}
+
+
+/* CONTAINER 5 CONTATO  */
+
+.container-5 {
+    width: 100%;
+    height: 180px;
+    background-color: #382f2f;
+}
+
+
+.texto-5 h1 {
+    width: 100vh;
+    margin-left: 570px;
+    font-size: 40px;
+    height: 13vh;
+    color: white;
+    
+}
+
+.text {
+color: white;
+font-size: 20px;
+}
+
+.texto-5 .telefone {
+    color: white;
+    font-size: 20px;
+    margin-left: 37rem;
+    margin-top: -3.5rem;
+    position: absolute;
+    }
+
+
+    .texto-5   .end {
+        color: white;
+    font-size: 20px;
+    margin-left: 70rem;
+    margin-top: -3.5rem;
+    position: absolute;
+        }
+
+
+
+/* width:vw; lado
+height: vh; altura */
+
+/* #382f2f a cor que estou usando  */

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/funcoes.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="ag.css">
+</head>
+
+<body>
+    <div class="fundo-cadastro">
+        <div class="container">
+            
+            <h1></h1>
+            <div class="texto">
+                <div class="sorte">
+                <p>Data:</p><input id="ipt_data" type="date"><br>
+
+                <p>Horario: </p><input id="ipt_hora" type="time"><br>
+
+                <p>Profissional: </p> <select name="" id="ipt_prof"><option value="1">Lucas</option>
+                <option value="2">xavier</option></select><br>
+
+                <p>Tipo de serviço escolhido:</p><select class="combo" name="" id="preferido">
+                    <option value="Escolha">Escolha</option>
+                    <option value="Corte de Cabelo Clássico">Corte de Cabelo Clássico </option>
+                    <option value="Barba Simples">Barba Simples</option>
+                    <option value="Corte e Barba">Corte e Barba</option>
+                    <option value="Progressiva"> Progressiva</option>
+                    <option value="Relaxamento">Relaxamento</option>
+                    <option value="Escova Masculino">Escova Masculino</option>
+                    <option value="Sobrancelha na Navalha">Sobrancelha na Navalha</option>
+                </select><br> <br>
+
+
+                <button onclick="agendamento()">Agendar</button><br>
+                <div class="preferido">
+            
+                    <h1>Cortes em alta </h1>
+            
+                    <p>Cortes da Semana:</p>
+                    <span id="cortefav"></span><br> <br>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <div id="cardErro" style="display: none;">
+        <div id="mensagem_erro"></div>
+    <div id="div_aguardar"></div></div> 
+</body>
+
+</html>
+<script>
+
+function obterDadosGrafico(idAquario) {
+        alterarTitulo(idAquario)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idAquario);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+    function atualizarGrafico(idAquario, dados) {
+
+fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+    if (response.ok) {
+        response.json().then(function (novoRegistro) {
+
+            console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+            console.log(`Dados atuais do gráfico: ${dados}`);
+
+            // tirando e colocando valores no gráfico
+            dados.labels.shift(); // apagar o primeiro
+            dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+            
+            dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+            dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+            
+            dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+            dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+
+            window.grafico_linha.update();
+
+            // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+            proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+        });
+    } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+        // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+        proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+    }
+})
+    .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    });
+
+}
+function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+    
+function agendamento() {
+       
+
+       //Recupere o valor da nova input pelo nome do id
+       // Agora vá para o método fetch logo abaixo
+       var dataVar = ipt_data.value;
+       var horarioVar = ipt_hora.value;
+       var profissionalVar = ipt_prof.value;
+       var TipodeserviçoescolhidoVar = preferido.value;
+       
+       
+
+       if ( dataVar == "" ||  horarioVar == "" || profissionalVar == "" || TipodeserviçoescolhidoVar == "") {
+           cardErro.style.display = "block"
+           mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+           finalizarAguardar();
+           return false;
+       }
+       else {
+           setInterval(sumirMensagem, 5000)
+       }
+
+       // Enviando o valor da nova input
+       fetch("/usuarios/agendamento", {
+           method: "POST",
+           headers: {
+               "Content-Type": "application/json"
+           },
+           body: JSON.stringify({
+               // crie um atributo que recebe o valor recuperado aqui
+               // Agora vá para o arquivo routes/usuario.js
+               dataServer: dataVar,
+               horarioServer: horarioVar,
+               profissionalServer: profissionalVar,
+               TipodeserviçoescolhidoVaServer: TipodeserviçoescolhidoVar
+               
+
+           })
+       }).then(function (resposta) {
+
+           console.log("resposta: ", resposta);
+
+           if (resposta.ok) {
+               cardErro.style.display = "block";
+
+               mensagem_erro.innerHTML = "Agendamento realizado com sucesso!  .";
+
+               setTimeout(() => {
+                  
+               }, "2000")
+               
+               limparFormulario();
+               finalizarAguardar();
+           } else {
+               throw ("Houve um erro ao tentar realizar o agendamento!");
+           }
+       }).catch(function (resposta) {
+           console.log(`#ERRO: ${resposta}`);
+           finalizarAguardar();
+       });
+
+       return false;
+   }
+
+</script>

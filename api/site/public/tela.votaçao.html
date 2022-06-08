@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação </title>
+</head>
+
+<body>
+
+    <label for="ipt_peaky">Peaky Blinder </label>
+    <input type="checkbox" id="ipt_peaky"> <br>
+    <label for="ipt_pompa">Pompadour</label>
+    <input type="checkbox" id="ipt_pompa"> <br>
+    <label for="ipt_low">Degrade low</label>
+    <input type="checkbox" id="ipt_low"> <br><br>
+    <button onclick="func_confirmarVoto()">Confirmar voto</button>
+    <button onclick="func_mostrarVotos()">Mostrar votos</button> <br><br>
+
+    <span id="mensagem"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    var vt_votos = []
+    var vt_peaky = []
+    var vt_pompa = []
+    var vt_low = []
+
+    function func_confirmarVoto() {
+
+        vt_votos.push(1)
+
+        if (ipt_peaky.checked === true) {
+
+            vt_peaky.push(1)
+
+        }
+ 
+        if (ipt_pompa.checked === true) {
+
+            vt_pompa.push(1)
+
+        }
+
+        if (ipt_low.checked === true) {
+
+            vt_low.push(1) 
+            
+        }
+
+    }
+
+    function func_mostrarVotos() {
+
+        mensagem.innerHTML = (`Quantidade de votos: ${vt_votos.length} <br>
+        Quantidade que gostam do Corte Peaky Blinder: ${vt_peaky.length} <br>
+        Quantidade que gostam do Corte Pompadour: ${vt_pompa.length} <br>
+        Quantidade que gostam do Corte Degrade Low: ${vt_low.length} 
+        `)
+        
+    }
+
+
+
+</script>

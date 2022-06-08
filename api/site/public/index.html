@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BARBEARIA XAPEL | HOME</title>
+
+    <script src="./js/funcoes.js"></script>
+    <script src="index.js"></script>
+    <link rel="shortcut icon" href="lol.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/xapel.css">
+</head>
+
+<body>
+    <!-- Conteudo da nav -->
+    <section id="inicio">
+        <header id="header1" class="header_1">
+            <nav class="nav_inicio">
+                <img class="logo" src="assets/imgs/logob.png">
+                <div class="itens">
+                    <a href="#">Inicio</a>
+                    <a href="#quemsomos">Quem Somos</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#galeria">Galeria</a>
+                    <a href="#contato">Contato</a>
+                    <a style="pointer-events: none">|</a>
+                    <a href="login.html">Login</a>
+                    <a href="Cadastro.html">Cadastro</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Textos e conteudo da Home -->
+        <div class="fundo-home">
+            <div class="cont">
+                <br><br><br><br>
+                <div class="fundo-texto">
+                    <h1 id="texto_home"> B A R B E A R I A </h1> <br>
+                    <h2>XAPEL</h2>
+                </div>
+                <button onclick="window.location.href ='Cadastro.html'">AGENDE AGORA!</a></button>
+                <p>Venha sentir essa experiência</p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Segunda pagina do Site  QUEM SOMOS -->
+    <div class="container-2" id="quemsomos">
+        <div class="quemsomos">
+            <div class="foto">
+                <div class="texto2">
+
+                    <h1>NOSSA HISTÓRIA</h1>
+
+
+
+                    <button onclick="quem()" style="display:block;" id="sobre">Conheça nossa Historia </button>
+                    <div class="editar">
+                        <div id="validar"></div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 tela CONTAINER - 2 SERVIÇOS   -->
+
+    <div class="container-3" id="servicos">
+        <div class="seviços">
+            <div class="foto-2">
+                <div class="texto3">
+                    <h1>SERVIÇOS</h1>
+                    <div class="ser">
+
+                        Corte de Cabelo Clássico
+                        <br> R$:50,00 <br> <br>
+
+                        Barba Simples
+                        <br> R$: 20,00 <br> <br>
+
+                        Corte e Barba
+                        <br> R$:80,00 <br> <br>
+
+                        Progressiva
+                        <br> R$:100,00 <br> <br>
+
+                        Relaxamento
+                        <br> R$:60,00 <br> <br>
+
+                        Escova Masculino
+                        <br> R$:40,00 <br> <br>
+
+
+                        Sobrancelha na Navalha
+                        <br> R$:20,00 <br> <br>
+
+                        DIA DO NOIVO
+
+                        <br> R$:150,00
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GALERIA CONTEINER 4 -->
+
+    <div class="container-4" id="galeria">
+        <div class="galeria ">
+            <div class="texto-4">
+                <div class="flex">
+
+                    <h1>GALERIA</h1>
+
+                    <div class="img-4">
+                        <img src="assets/imgs/foto5.jpg">
+                    </div>
+                    <div class="img-4">
+                        <img src="assets/imgs/foto2.jpg">
+                    </div>
+                    <div class="img-4">
+                        <img src="assets/imgs/foto3.jpg">
+                    </div>
+                    <div class="img-4">
+                        <img src="assets/imgs/foto4.jpg">
+                    </div>
+                    <div class="img-4">
+                        <img src="assets/imgs/foto1.jpeg">
+                    </div>
+                    <div class="img-4">
+                        <img src="assets/imgs/foto6.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- CONTATO CONTAINER 5 -->
+
+    <div class="container-5" id="contato">
+        <div class="contato ">
+            <div class="texto-5">
+
+                <h1>CONTATO</h1>
+
+
+                <p class="text">E-Mail: <br>
+                    lucas.pereira@sptech.school</p>
+
+                <p class="telefone">WhatsApp: <br>
+                    (11)9-5928-9836</p>
+
+                <p class="end">Endereço: <br>
+                    Rua Haddock Lobo, 595</p>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var vt_vetor=['Inspirada na cultura americana a Barbearia Xapel foi criada para ser um diferencial no seguimento de Barbearia, visando sempre o melhor para nosso cliente. Para que ele possa sentir  se bem em nosso ambiente, seguimos a linha clássica onde a excelênciano atendimento é primordial e o cliente é mais que um cliente, é um AMIGO! Desta forma destacamos um ambiente de alta qualidade onde você pode agendar seu atendimento, de forma que todos nossos clientes sejam atendidos.']
+
+    function quem() {
+        sobre.style.display="none"
+
+
+        for (let index = 0; index < vt_vetor.length; index++) {
+            validar.innerHTML += `${vt_vetor[index]}`
+            
+        }
+
+
+
+
+    }
+
+
+
+</script>

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+}
+.fundo-cadastro{
+    background-image: url(../assets/imgs/imagembbb.jpg);
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    vertical-align: auto;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.container h1{
+    color: #fff;
+    
+}
+
+.sorte{
+    
+}
+
+.texto{
+    color: #fff;
+    margin-top: 10%;
+}
